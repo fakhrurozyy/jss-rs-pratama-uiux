@@ -901,6 +901,46 @@
       white-space: nowrap;
     }
 
+  
+    .service-highlight {
+      background: #fff3f4;
+      border: 1px solid #ffd2d8;
+      border-radius: 16px;
+      padding: 12px;
+      color: #7a2028;
+      font-size: 13px;
+      line-height: 1.4;
+      margin-top: 12px;
+    }
+
+    .guide-box {
+      margin-top: 8px;
+      background: #f8fbfc;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .guide-box b {
+      color: var(--blue);
+    }
+
+    .example-chip {
+      display: inline-block;
+      margin-top: 8px;
+      margin-right: 6px;
+      background: #fff;
+      border: 1px solid #dbe6ea;
+      color: var(--blue);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
   </style>
 </head>
 
@@ -934,8 +974,8 @@
         </div>
 
         <div class="welcome">
-          Selamat datang,
-          <b>MUHAMMAD FAKHRU ROZY</b>
+          Jogja Smart Service
+          <b>Layanan Publik Kota Yogyakarta</b>
         </div>
 
         <div class="home-search">
@@ -1120,8 +1160,8 @@
         </div>
 
         <div class="card">
-          <h2>Apa yang ingin Anda lakukan?</h2>
-          <p>Pilihan dibuat lebih langsung agar pengguna awam tidak bingung dengan istilah teknis.</p>
+          <h2>Pilih Menu RS</h2>
+          <p>Pilih menu yang ingin dibuka.</p>
 
           <div class="choice-list">
             <button class="choice-wide" onclick="showScreen('serviceRules')">
@@ -1195,7 +1235,7 @@
       </div>
     </section>
 
-    <section id="doctorList" class="screen">
+        <section id="doctorList" class="screen">
       <div class="head-red">
         <div class="status white"><b>12.56</b><span>▮▮▮ WiFi 35%</span></div>
         <div class="topbar">
@@ -1203,33 +1243,107 @@
           <h1>Daftar Dokter</h1>
           <button onclick="openMenu()"><svg viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M4 6h16"/><path d="M4 18h16"/></svg></button>
         </div>
-        <p class="head-desc">Daftar dokter dibuat sebagai kartu supaya lebih mudah dipilih oleh pengguna ponsel.</p>
+        <p class="head-desc">Daftar dokter dan layanan disusun lebih sederhana agar mudah dipahami pengguna awam.</p>
       </div>
 
       <div class="native-content">
         <div class="card">
-          <h2>Dokter Tersedia</h2>
-          <p>Pilih dokter untuk melihat jadwal atau langsung gunakan untuk reservasi.</p>
+          <h2>Dokter yang Tersedia</h2>
+          <p>Nama dokter ditampilkan bersama poli agar pengguna langsung tahu layanan yang dituju.</p>
           <div class="doctor-list">
-            <div class="doctor-card" data-clinic="obsgyn"><div class="doctor-card-head"><div><h3>dr. Agustina Tyas Widyaningsih, Sp.OG</h3><small>Spesialis Obstetri dan Ginekologi</small></div><span class="doctor-badge">Obsgyn</span></div><div class="doctor-info"><div>Poliklinik<b>Poli Obsgyn 1</b></div><div>Status<b>Tersedia</b></div></div><div class="inline-actions"><button class="small-btn" onclick="showScreen('doctorSchedule')">Lihat Jadwal</button><button class="small-btn secondary" onclick="pilihJadwalDokter('Poli Obsgyn 1','dr. Agustina Tyas Widyaningsih, Sp.OG')">Pilih</button></div></div>
-            <div class="doctor-card" data-clinic="umum"><div class="doctor-card-head"><div><h3>dr. Ahmad Pratama</h3><small>Dokter Umum</small></div><span class="doctor-badge">Umum</span></div><div class="doctor-info"><div>Poliklinik<b>Poli Umum</b></div><div>Status<b>Tersedia</b></div></div><div class="inline-actions"><button class="small-btn" onclick="showScreen('doctorSchedule')">Lihat Jadwal</button><button class="small-btn secondary" onclick="pilihJadwalDokter('Poli Umum','dr. Ahmad Pratama')">Pilih</button></div></div>
-            <div class="doctor-card" data-clinic="gigi"><div class="doctor-card-head"><div><h3>drg. Sari Puspita</h3><small>Dokter Gigi</small></div><span class="doctor-badge">Gigi</span></div><div class="doctor-info"><div>Poliklinik<b>Poli Gigi</b></div><div>Status<b>Tersedia</b></div></div><div class="inline-actions"><button class="small-btn" onclick="showScreen('doctorSchedule')">Lihat Jadwal</button><button class="small-btn secondary" onclick="pilihJadwalDokter('Poli Gigi','drg. Sari Puspita')">Pilih</button></div></div>
+            <div class="doctor-card" data-clinic="jiwa"><div class="doctor-card-head"><div><h3>dr. Ria Ayu Wulandari, Sp.KJ</h3><small>Poli Jiwa</small></div><span class="doctor-badge">Tersedia</span></div><div class="doctor-info"><div>Poli<b>Poli Jiwa</b></div><div>Layanan<b>Konsultasi Psikiatri</b></div></div><div class="inline-actions"><button class="small-btn" onclick="showScreen('doctorSchedule')">Lihat Jadwal</button><button class="small-btn secondary" onclick="pilihJadwalDokter('Poli Jiwa','dr. Ria Ayu Wulandari, Sp.KJ')">Pilih</button></div></div>
+            <div class="doctor-card" data-clinic="obsgyn"><div class="doctor-card-head"><div><h3>dr. Agustina Tyas Widyaningsih, Sp.OG</h3><small>Poli Obsgyn 1</small></div><span class="doctor-badge">Tersedia</span></div><div class="doctor-info"><div>Poli<b>Poli Obsgyn 1</b></div><div>Layanan<b>Kebidanan & Kandungan</b></div></div><div class="inline-actions"><button class="small-btn" onclick="showScreen('doctorSchedule')">Lihat Jadwal</button><button class="small-btn secondary" onclick="pilihJadwalDokter('Poli Obsgyn 1','dr. Agustina Tyas Widyaningsih, Sp.OG')">Pilih</button></div></div>
+            <div class="doctor-card" data-clinic="dalam"><div class="doctor-card-head"><div><h3>dr. Wawan Tri Harjanto, Sp.PD</h3><small>Poli Dalam 1</small></div><span class="doctor-badge">Tersedia</span></div><div class="doctor-info"><div>Poli<b>Poli Dalam 1</b></div><div>Layanan<b>Penyakit Dalam</b></div></div><div class="inline-actions"><button class="small-btn" onclick="showScreen('doctorSchedule')">Lihat Jadwal</button><button class="small-btn secondary" onclick="pilihJadwalDokter('Poli Dalam 1','dr. Wawan Tri Harjanto, Sp.PD')">Pilih</button></div></div>
           </div>
-          <button class="btn secondary" onclick="showScreen('rsIntro')">Kembali ke Menu RS Pratama</button>
+        </div>
+
+        <div class="card">
+          <h2>Layanan yang Tersedia</h2>
+          <p>Layanan berikut dapat dipilih saat membuat reservasi.</p>
+          <div class="rule-list">
+            <div class="rule-item"><div class="rule-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div><b>Konsultasi Psikologi</b><span>Layanan konsultasi psikologi sesuai jadwal layanan.</span></div></div>
+            <div class="rule-item"><div class="rule-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div><div><b>Pelayanan Rujukan</b><span>Layanan administrasi rujukan sesuai ketentuan rumah sakit.</span></div></div>
+            <div class="rule-item"><div class="rule-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg></div><div><b>Pemeriksaan Calon Jamaah Haji</b><span>Pemeriksaan dimulai pukul 07.30 WIB dan mengikuti informasi puasa pada banner.</span></div></div>
+            <div class="rule-item"><div class="rule-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-6h6v6"/></svg></div><div><b>Pemeriksaan Mandiri (Lab/Radiologi)</b><span>Layanan pemeriksaan penunjang sesuai jadwal layanan.</span></div></div>
+            <div class="rule-item"><div class="rule-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20a6 6 0 0 1 12 0"/></svg></div><div><b>Poli Anak</b><span>Layanan pemeriksaan anak sesuai jadwal dokter.</span></div></div>
+            <div class="rule-item"><div class="rule-icon"><svg viewBox="0 0 24 24"><path d="M14 6 8.5 11.5"/><path d="M17 3 21 7"/><path d="M19 5 9 15"/><path d="M4 20l6-1 9-9-5-5-9 9-1 6z"/></svg></div><div><b>Poli Bedah</b><span>Layanan bedah rawat jalan sesuai jadwal dokter.</span></div></div>
+            <div class="rule-item"><div class="rule-icon"><svg viewBox="0 0 24 24"><path d="M6 9h12"/><path d="M8 13h8"/><path d="M10 17h4"/><path d="M8 3h8l3 3v12a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V6l3-3z"/></svg></div><div><b>Poli Pedodonsi</b><span>Layanan gigi anak sesuai jadwal dokter gigi.</span></div></div>
+            <div class="rule-item"><div class="rule-icon"><svg viewBox="0 0 24 24"><path d="M12 5a4 4 0 0 0-4 4c0 1.4.7 2.6 1.8 3.3L8 21l4-2 4 2-1.8-8.7A4 4 0 0 0 16 9a4 4 0 0 0-4-4z"/></svg></div><div><b>Poli Gigi dan Bedah Mulut</b><span>Layanan pemeriksaan gigi dan bedah mulut sesuai jadwal.</span></div></div>
+          </div>
+          <button class="btn secondary" onclick="showScreen('rsIntro')">Kembali ke Menu RS</button>
         </div>
       </div>
     </section>
 
-    <section id="doctorSchedule" class="screen">
-      <div class="head-red"><div class="status white"><b>12.56</b><span>▮▮▮ WiFi 35%</span></div><div class="topbar"><button onclick="goBack()"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button><h1>Jadwal Dokter</h1><button onclick="openMenu()"><svg viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M4 6h16"/><path d="M4 18h16"/></svg></button></div><p class="head-desc">Tampilan jadwal diubah dari tabel panjang menjadi kartu agar lebih mudah dibaca di layar ponsel.</p></div>
-      <div class="native-content"><div class="notice warning"><strong>Ketentuan jadwal:</strong><br>JSS hanya untuk reservasi hingga H+7. Pasien BPJS gunakan Mobile JKN untuk reservasi hingga H+30.</div>
-        <div class="card"><h2>Pilih Poliklinik</h2><p>Gunakan filter agar pengguna tidak perlu membaca tabel dokter yang terlalu panjang.</p><div class="doctor-tabs"><button class="doctor-tab active" onclick="filterDoctor('all', this)">Semua</button><button class="doctor-tab" onclick="filterDoctor('obsgyn', this)">Obsgyn</button><button class="doctor-tab" onclick="filterDoctor('umum', this)">Umum</button></div>
+        <section id="doctorSchedule" class="screen">
+      <div class="head-red">
+        <div class="status white"><b>12.56</b><span>▮▮▮ WiFi 35%</span></div>
+        <div class="topbar">
+          <button onclick="goBack()"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+          <h1>Jadwal Dokter</h1>
+          <button onclick="openMenu()"><svg viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M4 6h16"/><path d="M4 18h16"/></svg></button>
+        </div>
+        <p class="head-desc">Jadwal dibuat dalam bentuk kartu agar lebih mudah dibaca dibanding tabel panjang.</p>
+      </div>
+
+      <div class="native-content">
+        <div class="notice warning">
+          <strong>Perhatian:</strong><br>
+          Tanggal reservasi melalui JSS hanya dapat dipilih dari hari ini sampai H+7. Pasien BPJS yang membutuhkan H+30 diarahkan menggunakan Mobile JKN.
+        </div>
+
+        <div class="card">
+          <h2>Dokter & Jadwal</h2>
+          <p>Pilih kartu sesuai poli atau layanan yang dibutuhkan.</p>
+
+          <div class="doctor-tabs">
+            <button class="doctor-tab active" onclick="filterDoctor('all', this)">Semua</button>
+            <button class="doctor-tab" onclick="filterDoctor('dokter', this)">Dokter</button>
+            <button class="doctor-tab" onclick="filterDoctor('layanan', this)">Layanan</button>
+          </div>
+
           <div class="doctor-list">
-            <div class="doctor-card" data-clinic="obsgyn"><div class="doctor-card-head"><div><h3>dr. Agustina Tyas Widyaningsih, Sp.OG</h3><small>Poli Obsgyn 1</small></div><span class="doctor-badge">Tersedia</span></div><div class="doctor-info"><div>Hari Praktik<b>Jumat</b></div><div>Jam Layanan<b>07:10 - 10:00</b></div></div><div class="doctor-note">Pasien kontrol ulang mengikuti tanggal SKDP. Obat bulanan mengikuti surat kontrol atau tanggal kunjungan terakhir.</div><div class="inline-actions"><button class="small-btn" onclick="pilihJadwalDokter('Poli Obsgyn 1','dr. Agustina Tyas Widyaningsih, Sp.OG')">Pilih Dokter</button><button class="small-btn secondary" onclick="showScreen('serviceRules')">Lihat Ketentuan</button></div></div>
-            <div class="doctor-card" data-clinic="umum"><div class="doctor-card-head"><div><h3>dr. Ahmad Pratama</h3><small>Poli Umum</small></div><span class="doctor-badge">Tersedia</span></div><div class="doctor-info"><div>Hari Praktik<b>Senin - Kamis</b></div><div>Jam Layanan<b>08:00 - 11:00</b></div></div><div class="doctor-note">Reservasi melalui JSS mengikuti batas H+7. Pasien BPJS diarahkan menggunakan Mobile JKN untuk H+30.</div><div class="inline-actions"><button class="small-btn" onclick="pilihJadwalDokter('Poli Umum','dr. Ahmad Pratama')">Pilih Dokter</button><button class="small-btn secondary" onclick="showScreen('serviceRules')">Lihat Ketentuan</button></div></div>
-            <div class="doctor-card" data-clinic="gigi"><div class="doctor-card-head"><div><h3>drg. Sari Puspita</h3><small>Poli Gigi</small></div><span class="doctor-badge">Tersedia</span></div><div class="doctor-info"><div>Hari Praktik<b>Selasa & Kamis</b></div><div>Jam Layanan<b>09:00 - 12:00</b></div></div><div class="doctor-note">Pilih tanggal kunjungan sesuai ketersediaan dokter dan ketentuan layanan.</div><div class="inline-actions"><button class="small-btn" onclick="pilihJadwalDokter('Poli Gigi','drg. Sari Puspita')">Pilih Dokter</button><button class="small-btn secondary" onclick="showScreen('serviceRules')">Lihat Ketentuan</button></div></div>
-          </div><button class="btn secondary" onclick="showScreen('rsIntro')">Kembali ke Menu RS Pratama</button>
-        </div></div>
+            <div class="doctor-card" data-clinic="dokter">
+              <div class="doctor-card-head"><div><h3>dr. Ria Ayu Wulandari, Sp.KJ</h3><small>Poli Jiwa</small></div><span class="doctor-badge">Tersedia</span></div>
+              <div class="doctor-info"><div>Hari Praktik<b>Senin & Rabu</b></div><div>Jam Layanan<b>08:00 - 11:00</b></div></div>
+              <div class="inline-actions"><button class="small-btn" onclick="pilihJadwalDokter('Poli Jiwa','dr. Ria Ayu Wulandari, Sp.KJ')">Pilih Dokter</button><button class="small-btn secondary" onclick="showScreen('serviceRules')">Lihat Ketentuan</button></div>
+            </div>
+
+            <div class="doctor-card" data-clinic="dokter">
+              <div class="doctor-card-head"><div><h3>dr. Agustina Tyas Widyaningsih, Sp.OG</h3><small>Poli Obsgyn 1</small></div><span class="doctor-badge">Tersedia</span></div>
+              <div class="doctor-info"><div>Hari Praktik<b>Jumat</b></div><div>Jam Layanan<b>07:10 - 10:00</b></div></div>
+              <div class="inline-actions"><button class="small-btn" onclick="pilihJadwalDokter('Poli Obsgyn 1','dr. Agustina Tyas Widyaningsih, Sp.OG')">Pilih Dokter</button><button class="small-btn secondary" onclick="showScreen('serviceRules')">Lihat Ketentuan</button></div>
+            </div>
+
+            <div class="doctor-card" data-clinic="dokter">
+              <div class="doctor-card-head"><div><h3>dr. Wawan Tri Harjanto, Sp.PD</h3><small>Poli Dalam 1</small></div><span class="doctor-badge">Tersedia</span></div>
+              <div class="doctor-info"><div>Hari Praktik<b>Selasa & Kamis</b></div><div>Jam Layanan<b>08:00 - 11:00</b></div></div>
+              <div class="inline-actions"><button class="small-btn" onclick="pilihJadwalDokter('Poli Dalam 1','dr. Wawan Tri Harjanto, Sp.PD')">Pilih Dokter</button><button class="small-btn secondary" onclick="showScreen('serviceRules')">Lihat Ketentuan</button></div>
+            </div>
+
+            <div class="doctor-card" data-clinic="layanan">
+              <div class="doctor-card-head"><div><h3>Pemeriksaan Calon Jamaah Haji</h3><small>Layanan pemeriksaan khusus</small></div><span class="doctor-badge">Info</span></div>
+              <div class="doctor-info"><div>Puasa<b>Mulai 22.00 WIB</b></div><div>Pemeriksaan<b>Mulai 07.30 WIB</b></div></div>
+              <div class="doctor-note">Calon jamaah haji wajib puasa mulai pukul 22.00 WIB sampai pemeriksaan besok pagi.</div>
+              <div class="inline-actions"><button class="small-btn" onclick="pilihJadwalDokter('Pemeriksaan Calon Jamaah Haji','Petugas Pemeriksaan Haji')">Pilih Layanan</button><button class="small-btn secondary" onclick="showScreen('visitRequirements')">Syarat Kunjungan</button></div>
+            </div>
+
+            <div class="doctor-card" data-clinic="layanan">
+              <div class="doctor-card-head"><div><h3>Konsultasi Psikologi</h3><small>Layanan psikologi</small></div><span class="doctor-badge">Layanan</span></div>
+              <div class="doctor-info"><div>Hari Layanan<b>Senin - Jumat</b></div><div>Jam Layanan<b>08:00 - 12:00</b></div></div>
+              <div class="inline-actions"><button class="small-btn" onclick="pilihJadwalDokter('Konsultasi Psikologi','Psikolog Klinis')">Pilih Layanan</button><button class="small-btn secondary" onclick="showScreen('serviceRules')">Lihat Ketentuan</button></div>
+            </div>
+
+            <div class="doctor-card" data-clinic="layanan">
+              <div class="doctor-card-head"><div><h3>Pelayanan Rujukan</h3><small>Layanan administrasi</small></div><span class="doctor-badge">Layanan</span></div>
+              <div class="doctor-info"><div>Hari Layanan<b>Senin - Jumat</b></div><div>Jam Layanan<b>08:00 - 12:00</b></div></div>
+              <div class="inline-actions"><button class="small-btn" onclick="pilihJadwalDokter('Pelayanan Rujukan','Petugas Rujukan')">Pilih Layanan</button><button class="small-btn secondary" onclick="showScreen('serviceRules')">Lihat Ketentuan</button></div>
+            </div>
+          </div>
+
+          <button class="btn secondary" onclick="showScreen('rsIntro')">Kembali ke Menu RS Pratama</button>
+        </div>
+      </div>
     </section>
 
     <section id="patientType" class="screen">
@@ -1375,7 +1489,7 @@
       </div>
     </section>
 
-    <section id="schedule" class="screen">
+        <section id="schedule" class="screen">
       <div class="head-red">
         <div class="status white">
           <b>12.59</b>
@@ -1384,11 +1498,11 @@
 
         <div class="topbar">
           <button onclick="goBack()"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
-          <h1>Pilih Jadwal</h1>
+          <h1>Form Reservasi</h1>
           <button onclick="openMenu()"><svg viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M4 6h16"/><path d="M4 18h16"/></svg></button>
         </div>
 
-        <p class="head-desc">Pilih jenis pembayaran, poliklinik, dokter, dan tanggal kunjungan.</p>
+        <p class="head-desc">Pilih layanan, tanggal kunjungan, dan dokter sesuai ketentuan JSS.</p>
       </div>
 
       <div class="native-content">
@@ -1401,35 +1515,48 @@
           </div>
         </div>
 
+        <div class="notice warning">
+          <strong>Batas tanggal reservasi:</strong><br>
+          Tanggal kunjungan di JSS hanya dapat dipilih dari hari ini sampai H+7.
+        </div>
+
         <div class="card">
-          <h2>Jadwal Kunjungan</h2>
-          <p>Pilihan jadwal disusun dalam satu halaman agar tidak terasa seperti halaman web terpisah.</p>
+          <h2>Data Kunjungan</h2>
+          <p>Desain form dibuat lebih dekat dengan tampilan layanan asli, tetapi tetap disederhanakan agar mudah diisi.</p>
 
           <label class="field-label">Jenis Pembayaran</label>
           <select id="jaminan">
             <option value="">Pilih jenis pembayaran</option>
-            <option value="Umum">Umum</option>
+            <option value="Umum / Pribadi">Umum / Pribadi</option>
             <option value="BPJS">BPJS</option>
           </select>
 
-          <label class="field-label">Tanggal Kunjungan</label>
-          <input id="tanggalKunjungan" type="date">
+          <label class="field-label">Hari</label>
+          <input id="hariKunjungan" type="text" placeholder="Hari akan terisi otomatis" readonly>
 
-          <label class="field-label">Poliklinik</label>
-          <select id="poliklinik">
-            <option value="">Pilih poliklinik</option>
+          <label class="field-label">Tanggal Kunjungan</label>
+          <input id="tanggalKunjungan" type="date" onchange="updateHariKunjungan(); validasiBatasTanggal();">
+          <div class="helper">Pilih tanggal kunjungan sesuai ketentuan JSS, maksimal sampai H+7.</div>
+
+          <label class="field-label">Pilih Poliklinik / Layanan</label>
+          <select id="poliklinik" onchange="populateDokterOptions(false)">
+            <option value="">Pilih poliklinik / layanan</option>
+            <option value="Konsultasi Psikologi">Konsultasi Psikologi</option>
+            <option value="Pelayanan Rujukan">Pelayanan Rujukan</option>
+            <option value="Pemeriksaan Calon Jamaah Haji">Pemeriksaan Calon Jamaah Haji</option>
+            <option value="Pemeriksaan Mandiri (Lab/Radiologi)">Pemeriksaan Mandiri (Lab/Radiologi)</option>
+            <option value="Poli Anak">Poli Anak</option>
+            <option value="Poli Bedah">Poli Bedah</option>
+            <option value="Poli Pedodonsi">Poli Pedodonsi</option>
+            <option value="Poli Gigi dan Bedah Mulut">Poli Gigi dan Bedah Mulut</option>
+            <option value="Poli Jiwa">Poli Jiwa</option>
             <option value="Poli Obsgyn 1">Poli Obsgyn 1</option>
-            <option value="Poli Umum">Poli Umum</option>
-            <option value="Poli Gigi">Poli Gigi</option>
+            <option value="Poli Dalam 1">Poli Dalam 1</option>
           </select>
 
-          <label class="field-label">Dokter</label>
+          <label class="field-label">Pilih Dokter / Petugas</label>
           <select id="dokter">
-            <option value="">Pilih dokter</option>
-            <option value="dr. Agustina Tyas Widyaningsih, Sp.OG">dr. Agustina Tyas Widyaningsih, Sp.OG</option>
-            <option value="dr. Ahmad Pratama">dr. Ahmad Pratama</option>
-            <option value="drg. Sari Puspita">drg. Sari Puspita</option>
-            <option value="drg. Sari Puspita">drg. Sari Puspita</option>
+            <option value="">Pilih dokter / petugas</option>
           </select>
 
           <button class="btn" onclick="lihatRingkasan()">Lihat Ringkasan</button>
@@ -1476,7 +1603,7 @@
             <div class="summary-row"><span>Tanggal Lahir</span><b id="sumLahir">-</b></div>
             <div class="summary-row"><span>Jenis Pembayaran</span><b id="sumJaminan">-</b></div>
             <div class="summary-row"><span>Tanggal Kunjungan</span><b id="sumTanggal">-</b></div>
-            <div class="summary-row"><span>Poliklinik</span><b id="sumPoliklinik">-</b></div>
+            <div class="summary-row"><span>Poli / Layanan</span><b id="sumPoliklinik">-</b></div>
             <div class="summary-row"><span>Dokter</span><b id="sumDokter">-</b></div>
             <div class="summary-row"><span>Nomor WhatsApp</span><b id="sumWa">-</b></div>
           </div>
@@ -1535,7 +1662,7 @@
 
             <div class="ticket-row"><span>Jenis Pembayaran</span><b id="ticketJenis">-</b></div>
             <div class="ticket-row"><span>Tanggal Kunjungan</span><b id="ticketTanggal">-</b></div>
-            <div class="ticket-row"><span>Poliklinik</span><b id="ticketPoliklinik">-</b></div>
+            <div class="ticket-row"><span>Poli / Layanan</span><b id="ticketPoliklinik">-</b></div>
             <div class="ticket-row"><span>Dokter</span><b id="ticketDokter">-</b></div>
 
             <div class="checkin">
@@ -1618,6 +1745,8 @@
 
       if (id === "schedule") {
         isiPilihanDokterTersimpan();
+        setTanggalConstraints();
+        updateHariKunjungan();
       }
 
       window.scrollTo(0, 0);
@@ -1641,13 +1770,15 @@
 
 
     function isiPilihanDokterTersimpan() {
-      if (data.poliklinik) {
-        const poliklinikSelect = document.getElementById("poliklinik");
-        if (poliklinikSelect) poliklinikSelect.value = data.poliklinik;
+      const poliklinikSelect = document.getElementById("poliklinik");
+      if (poliklinikSelect && data.poliklinik) {
+        poliklinikSelect.value = data.poliklinik;
       }
-      if (data.dokter) {
-        const dokterSelect = document.getElementById("dokter");
-        if (dokterSelect) dokterSelect.value = data.dokter;
+
+      populateDokterOptions(true);
+      const dokterSelect = document.getElementById("dokter");
+      if (dokterSelect && data.dokter) {
+        dokterSelect.value = data.dokter;
       }
     }
 
@@ -1727,7 +1858,11 @@
       const dokter = document.getElementById("dokter").value;
 
       if (!jaminan || !tanggalKunjungan || !poliklinik || !dokter) {
-        alert("Jenis pembayaran, tanggal kunjungan, poliklinik, dan dokter wajib dipilih.");
+        alert("Jenis pembayaran, tanggal kunjungan, poliklinik / layanan, dan dokter / petugas wajib dipilih.");
+        return;
+      }
+
+      if (!validasiBatasTanggal()) {
         return;
       }
 
@@ -1761,6 +1896,91 @@
       document.getElementById("ticketAntrian").innerText = nomorAntrian;
 
       showScreen("ticket");
+    }
+
+
+    const clinicDoctorMap = {
+      "Konsultasi Psikologi": ["Psikolog Klinis"],
+      "Pelayanan Rujukan": ["Petugas Rujukan"],
+      "Pemeriksaan Calon Jamaah Haji": ["Petugas Pemeriksaan Haji"],
+      "Pemeriksaan Mandiri (Lab/Radiologi)": ["Petugas Lab / Radiologi"],
+      "Poli Anak": ["Dokter Poli Anak"],
+      "Poli Bedah": ["Dokter Poli Bedah"],
+      "Poli Pedodonsi": ["drg. Dokter Gigi Anak"],
+      "Poli Gigi dan Bedah Mulut": ["Dokter Gigi dan Bedah Mulut"],
+      "Poli Jiwa": ["dr. Ria Ayu Wulandari, Sp.KJ"],
+      "Poli Obsgyn 1": ["dr. Agustina Tyas Widyaningsih, Sp.OG"],
+      "Poli Dalam 1": ["dr. Wawan Tri Harjanto, Sp.PD"]
+    };
+
+    function setTanggalConstraints() {
+      const input = document.getElementById("tanggalKunjungan");
+      if (!input) return;
+      const today = new Date();
+      const maxDate = new Date();
+      maxDate.setDate(today.getDate() + 7);
+      input.min = toDateInputValue(today);
+      input.max = toDateInputValue(maxDate);
+    }
+
+    function toDateInputValue(date) {
+      const y = date.getFullYear();
+      const m = String(date.getMonth() + 1).padStart(2, '0');
+      const d = String(date.getDate()).padStart(2, '0');
+      return `${y}-${m}-${d}`;
+    }
+
+    function updateHariKunjungan() {
+      const tanggal = document.getElementById("tanggalKunjungan")?.value;
+      const hariInput = document.getElementById("hariKunjungan");
+      if (!hariInput) return;
+      if (!tanggal) {
+        hariInput.value = "";
+        return;
+      }
+      const hari = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+      const date = new Date(tanggal + "T00:00:00");
+      hariInput.value = hari[date.getDay()];
+    }
+
+    function validasiBatasTanggal() {
+      const input = document.getElementById("tanggalKunjungan");
+      if (!input || !input.value) return true;
+      const selected = new Date(input.value + "T00:00:00");
+      const today = new Date();
+      today.setHours(0,0,0,0);
+      const max = new Date(today);
+      max.setDate(max.getDate() + 7);
+      if (selected < today || selected > max) {
+        alert("Tanggal kunjungan di JSS hanya dapat dipilih dari hari ini sampai H+7.");
+        input.value = "";
+        updateHariKunjungan();
+        return false;
+      }
+      return true;
+    }
+
+    function populateDokterOptions(preserveSelected = false) {
+      const poliSelect = document.getElementById("poliklinik");
+      const dokterSelect = document.getElementById("dokter");
+      if (!poliSelect || !dokterSelect) return;
+
+      const selectedPoli = poliSelect.value;
+      const prevSelected = preserveSelected ? data.dokter : "";
+      dokterSelect.innerHTML = '<option value="">Pilih dokter / petugas</option>';
+
+      if (!selectedPoli || !clinicDoctorMap[selectedPoli]) return;
+
+      clinicDoctorMap[selectedPoli].forEach(name => {
+        const opt = document.createElement("option");
+        opt.value = name;
+        opt.textContent = name;
+        dokterSelect.appendChild(opt);
+      });
+
+      if (prevSelected && clinicDoctorMap[selectedPoli].includes(prevSelected)) {
+        dokterSelect.value = prevSelected;
+      }
     }
 
     function formatTanggal(tanggal) {
